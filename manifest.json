@@ -1,6 +1,6 @@
 {
-    "name": "码小象自助洗车",
-    "short_name": "码小象洗车",
+    "name": "洗省省自助洗车",
+    "short_name": "洗省省洗车",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#080B09",
