@@ -1,12 +1,13 @@
 {
-    "name": "flutter_car",
-    "short_name": "flutter_car",
+    "name": "码小象自助洗车",
+    "short_name": "码小象洗车",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#080B09",
+    "theme_color": "#080B09",
+    "description": "扫码即洗、按分钟计费、24 小时营业的自助洗车服务。",
+    "lang": "zh-CN",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {
