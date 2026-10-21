@@ -113,12 +113,7 @@
     }
   </style>
 
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  <script src="flutter_bootstrap.js" async></script>
 </head>
 <body>
   <div id="boot-loader" aria-label="正在加载洗省省自助洗车">
@@ -127,25 +122,12 @@
     <div class="boot-line"></div>
   </div>
   <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-            window.addEventListener('flutter-first-frame', function() {
-              document.getElementById('boot-loader')?.classList.add('is-hidden');
-            }, { once: true });
-            setTimeout(function() {
-              document.getElementById('boot-loader')?.classList.add('is-hidden');
-            }, 8000);
-          });
-        }
-      });
-    });
+    window.addEventListener('flutter-first-frame', function() {
+      document.getElementById('boot-loader')?.classList.add('is-hidden');
+    }, { once: true });
+    setTimeout(function() {
+      document.getElementById('boot-loader')?.classList.add('is-hidden');
+    }, 8000);
   </script>
 </body>
 </html>
