@@ -113,7 +113,27 @@
     }
   </style>
 
-  <script src="flutter_bootstrap.js?v=rollback-20261023" async></script>
+  <script>
+    (async function () {
+      try {
+        if ('serviceWorker' in navigator) {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(registrations.map((registration) => registration.unregister()));
+        }
+        if ('caches' in window) {
+          const cacheNames = await caches.keys();
+          await Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
+        }
+      } catch (error) {
+        console.warn('Cache migration skipped:', error);
+      } finally {
+        const script = document.createElement('script');
+        script.src = 'flutter_bootstrap.js?v=rollback-a8fe14f';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    })();
+  </script>
 </head>
 <body>
   <div id="boot-loader" aria-label="正在加载洗省省自助洗车">
