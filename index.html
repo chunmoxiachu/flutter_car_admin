@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    (function () {
+      const key = 'flutter_car_admin_entry';
+      const version = '1b0d216';
+      if (!window.location.search.includes('entry=' + version)) {
+        const target = new URL(window.location.href);
+        target.searchParams.set('entry', version);
+        try { sessionStorage.setItem(key, version); } catch (_) {}
+        window.location.replace(target.toString());
+      }
+    })();
+  </script>
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
